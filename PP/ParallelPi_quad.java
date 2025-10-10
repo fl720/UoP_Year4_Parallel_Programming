@@ -10,7 +10,7 @@
 public class ParallelPi_quad extends Thread {
       public static void main(String[] args) throws Exception {
 
-          long startTime = System.currentTimeMillis();
+          long startTime = System.nanoTime();
 
           ParallelPi_quad thread1 = new ParallelPi_quad();
           thread1.begin = 0 ;
@@ -38,7 +38,7 @@ public class ParallelPi_quad extends Thread {
           thread3.join();
           thread4.join();
 
-          long endTime = System.currentTimeMillis();
+          long endTime = System.nanoTime();
 
           double pi = step * (thread1.sum + thread2.sum + thread3.sum + thread4.sum) ;
         

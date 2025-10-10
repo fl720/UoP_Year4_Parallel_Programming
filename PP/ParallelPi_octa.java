@@ -10,7 +10,7 @@
 public class ParallelPi_octa extends Thread {
       public static void main(String[] args) throws Exception {
 
-          long startTime = System.currentTimeMillis();
+          long startTime = System.nanoTime();
 
           ParallelPi_octa thread1 = new ParallelPi_octa();
           thread1.begin = 0 ;
@@ -62,7 +62,7 @@ public class ParallelPi_octa extends Thread {
           thread7.join();
           thread8.join();
 
-          long endTime = System.currentTimeMillis();
+          long endTime = System.nanoTime();
 
           double pi = step * (thread1.sum + thread2.sum + thread3.sum + thread4.sum + thread7.sum + thread5.sum + thread6.sum + thread8.sum) ;
         

@@ -10,7 +10,7 @@
   public class ParallelPi extends Thread {
       public static void main(String[] args) throws Exception {
 
-          long startTime = System.currentTimeMillis();
+          long startTime = System.nanoTime();
 
           ParallelPi thread1 = new ParallelPi();
           thread1.begin = 0 ;
@@ -26,7 +26,7 @@
           thread1.join();
           thread2.join();
 
-          long endTime = System.currentTimeMillis();
+          long endTime = System.nanoTime();
 
           double pi = step * (thread1.sum + thread2.sum) ;
         

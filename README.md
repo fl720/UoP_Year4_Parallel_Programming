@@ -2,8 +2,8 @@
 This is Year4 Parallel Programming practice and coursework source code. Using Java to study different behaviour and properties of different parallel programming approches. 
 
 From : 
-* Multicore Mode
-* MPJ (Cluster Mode)
+* Multicore processors
+* Computer Cluster Mode using MPJ(Java message passing library)
 * GPU (Using Aparapi)
 
 Folder **PP** contains all practices after each lecture. Folder **mini project** contains all the materials for the coursework.
@@ -22,3 +22,9 @@ Each threads will take the next avaliable work after they have solve their probl
 * Lecutre 08 & 09 & 10: Introduce to GPU. Solving multiplication of Matrices using GPU platform (Aparapi).
 
 ## Mini Project
+A parallel version of matrix multiplication using Java threads or MPJ Express, that achieves good parallel speedups. 
+It generates two random matrices of size N by filling them with random numbers, and multiply them together by parallel and sequential algorithms.
+Compares the result of the parallel algorithm with the result of the sequential version, element by element. Compare timings of both algorithms for parallel speedup. 
+
+There is also a parallel version of solution of linear equations by the LU decompostion method. To simplified, "pivotting" is not discussed. 
+AparapiAPI is also used to discover ability of GPU in parallel programming. 

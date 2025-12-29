@@ -1,0 +1,25 @@
+====================== Title ======================
+        Parallelisation in Matrices Calculation 
+
+====================== Debrief ======================
+Write some basic matrix arithmetic operations in Java (or another language), and try to parallelize them using Java threads or MPJ Express (or any other approach).
+
+You should be able to make a parallel version of matrix multiplication, at least, that achieves good parallel speedups. Generate two random matrices of size N by filling them with random numbers, and multiply them together by parallel and sequential algorithms. For testing, make sure your program compares the result of the parallel algorithm with the (presumably correct) result of the sequential version, element by element. Compare timings of both algorithms for parallel speedup.
+
+For a bigger challenge, try to make a parallel version of solution of linear equations by the LU decompostion method. (As discussed in the week 1 lecture, this is the basis of the Linpack benchmark used in the TOP500 list.) To simplify, don't worry too much about "pivotting".
+
+----------------------- EXTRA ----------------------- 
+Parallelization of matrix multiplication by AparAPI and other approaches.
+
+====================== Taks Summary ====================== 
+1. Sequential Matrix operations                             <<
+2. Parallelisation - Java threads                          
+3. Parallelisation - MPJ Express 
+4. Parallelisation - Aparapi ( or other GPU methods )       <<
+5. LU decompostion method (check week1 lecture ? )          <<
+
+====================== Requirements ======================
+- 2 matrices of size N x N with random numbers in their cells. 
+- different sizes (eg: 500, 1000, 10,000 ...)
+- generate two random square matrices with the same size, pass to each test zone ( sequential, Java threads, MPJ, Aparapi, LU ...) ???? 
+

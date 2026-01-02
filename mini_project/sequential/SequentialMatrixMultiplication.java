@@ -23,7 +23,7 @@ public class SequentialMatrixMultiplication {
     }
     
     public static void main(String[] args) {
-        int[] sizes = {500, 1000, 2500, 5000 }; // matrix sizes to test
+        int[] sizes = { 512 , 1024, 2048, 4096, 5120 }; // matrix sizes to test
         
         for (int n : sizes) {
             System.out.println("\n Matrices Size: " + n + "x" + n);
@@ -37,10 +37,10 @@ public class SequentialMatrixMultiplication {
             double[][] C = multiply(A, B);
             long endTime = System.nanoTime();
             
-            double time = (endTime - startTime) / 1e9;
+            double time = (endTime - startTime) / 1e6 ; 
             System.out.printf("Time: %.4f s\n", time);
             System.out.printf("GFLOPS: %.2f \n", 
-                2.0 * n * n * n / time / 1e9);
+                2.0 * n * n * n / time / 1e6);
         }
     }
     

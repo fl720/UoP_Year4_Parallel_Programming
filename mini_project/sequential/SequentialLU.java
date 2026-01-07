@@ -7,7 +7,8 @@ import java.util.Random;
 public class SequentialLU {
 
     // Matrix size to test
-    private static final int[] MATRIX_SIZES = {512, 1024, 2048, 4096, 5120};
+    // private static final int[] MATRIX_SIZES = {512, 1024, 2048, 3072, 4096};
+    private static final int[] MATRIX_SIZES = {3072 }; 
 
     /**
      * Generate a random square matrix of given size.
@@ -15,7 +16,7 @@ public class SequentialLU {
      */
     private static double[][] generateRandomMatrix(int size) {
         Random rand = new Random();
-        double[][] matrix = new double[size][size];
+        double[][] matrix = new double[size][size]; 
         for (int i = 0; i < size; i++) {
             double rowSum = 0.0;
             for (int j = 0; j < size; j++) {

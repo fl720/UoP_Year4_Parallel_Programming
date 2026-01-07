@@ -9,7 +9,8 @@ public class AparapiGPUTest {
     
     public static void main(String[] args) {
         // 测试矩阵大小
-        int[] sizes = {512, 1024, 2048,4096, 5120};
+        // int[] sizes = {512, 1024, 2048,4096, 5120};
+        int[] sizes = {3072};
         
         System.out.println("Aparapi GPU 矩阵乘法测试");
         System.out.println("========================");

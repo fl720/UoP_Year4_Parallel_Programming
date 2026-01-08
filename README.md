@@ -22,9 +22,12 @@ Each threads will take the next avaliable work after they have solve their probl
 * Lecutre 08 & 09 & 10: introduce to GPU. Solving multiplication of Matrices using GPU platform (Aparapi).
 
 ## Mini Project
-A parallel version of matrix multiplication using Java threads or MPJ Express, that achieves good parallel speedups. 
+A parallel version of matrix multiplication and LU Decomposition using Java threads or MPJ Express, that achieves good parallel speedups. 
 It generates two random matrices of size N by filling them with random numbers, and multiply them together by parallel and sequential algorithms.
 Compares the result of the parallel algorithm with the result of the sequential version, element by element. Compare timings of both algorithms for parallel speedup. 
 
 There is also a parallel version of solution of linear equations by the LU decompostion method. To simplified, "pivotting" is not discussed. 
 AparapiAPI is also used to discover ability of GPU in parallel programming. 
+
+The **sequential** folder contains code for calculating problem in normal mathematical approch. This act as the benchmark for our experiment. 
+The **Aparapi** folder contains code for solving problem using aparapi api with GPU.

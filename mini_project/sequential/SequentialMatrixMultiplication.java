@@ -23,8 +23,7 @@ public class SequentialMatrixMultiplication {
     }
     
     public static void main(String[] args) {
-        // int[] sizes = { 512 , 1024, 2048, 4096, 5120 }; // matrix sizes to test
-        int[] sizes = { 3072 }; 
+        int[] sizes = { 512 , 1024, 2048, 3072, 4096,  }; // matrix sizes 
         
         for (int n : sizes) {
             System.out.println("\n Matrices Size: " + n + "x" + n);

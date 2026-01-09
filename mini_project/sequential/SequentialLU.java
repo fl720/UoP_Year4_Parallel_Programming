@@ -7,13 +7,8 @@ import java.util.Random;
 public class SequentialLU {
 
     // Matrix size to test
-    // private static final int[] MATRIX_SIZES = {512, 1024, 2048, 3072, 4096};
-    private static final int[] MATRIX_SIZES = {3072 }; 
+    private static final int[] MATRIX_SIZES = {512, 1024, 2048, 3072, 4096};
 
-    /**
-     * Generate a random square matrix of given size.
-     * The matrix is made diagonally dominant to avoid numerical issues.
-     */
     private static double[][] generateRandomMatrix(int size) {
         Random rand = new Random();
         double[][] matrix = new double[size][size]; 
@@ -25,7 +20,7 @@ public class SequentialLU {
                     rowSum += Math.abs(matrix[i][j]);
                 }
             }
-            matrix[i][i] = rowSum + 1.0; // ensure diagonal dominance
+            matrix[i][i] = rowSum + 1.0; 
         }
         return matrix;
     }
@@ -40,14 +35,11 @@ public class SequentialLU {
         double[][] L = new double[n][n];
         double[][] U = new double[n][n];
 
-        // Initialize L as identity matrix
         for (int i = 0; i < n; i++) {
             L[i][i] = 1.0;
         }
 
-        // Doolittle algorithm
         for (int k = 0; k < n; k++) {
-            // Compute U[k][j] for j = k to n-1
             for (int j = k; j < n; j++) {
                 double sum = 0.0;
                 for (int p = 0; p < k; p++) {
@@ -56,7 +48,6 @@ public class SequentialLU {
                 U[k][j] = A[k][j] - sum;
             }
 
-            // Compute L[i][k] for i = k+1 to n-1
             for (int i = k + 1; i < n; i++) {
                 double sum = 0.0;
                 for (int p = 0; p < k; p++) {
@@ -68,10 +59,7 @@ public class SequentialLU {
 
         return new LUResult(L, U);
     }
-
-    /**
-     * Container for L and U matrices.
-     */
+    
     private static class LUResult {
         double[][] L;
         double[][] U;
@@ -87,15 +75,13 @@ public class SequentialLU {
         for (int n : MATRIX_SIZES) {
             System.out.println("Testing N = " + n);
 
-            // Generate random matrix
             double[][] A = generateRandomMatrix(n);
 
-            // Warm-up (run once to trigger JIT)
+            // Using warm-up 
             if (n == 512) {
                 decompose(A);
             }
 
-            // Measure decomposition time
             long startTime = System.nanoTime();
             decompose(A);
             long endTime = System.nanoTime();
@@ -103,7 +89,6 @@ public class SequentialLU {
             double time = (endTime - startTime) / 1e6 ; 
             System.out.printf("Time: %.4f s\n", time);
 
-            // Calculate GFLOPS: approximately (2/3 * n^3) floating point operations
             double flops = (2.0 / 3.0) * n * n * n;
             double gflops = (flops / 1e9) / (time / 1000.0);
 

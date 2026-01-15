@@ -8,7 +8,7 @@ import com.aparapi.Range;
 public class AparapiGPUTest {
     
     public static void main(String[] args) {
-        int[] sizes = {512, 1024, 2048,3072, 4096}; // matrix size 
+        int[] sizes = {512, 1024, 2048,3072, 4096};
         
         
         Device device = Device.best();

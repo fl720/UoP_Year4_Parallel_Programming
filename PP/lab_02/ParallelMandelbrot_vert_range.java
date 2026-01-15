@@ -39,7 +39,7 @@
   
           // Draw pixels
   
-          for (int i = 0 ; i < N ; i++) {
+          for (int i = 0 ; i < N/2 ; i++) {
               for (int j = 0 ; j < N ; j++) {
   
                   int k = set [i] [j] ;
@@ -52,6 +52,22 @@
                       level = 0 ;
                   }
                   Color c = new Color(0, level, level) ;  // Cyan
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = N/2 ; i < N ; i++) {
+              for (int j = 0 ; j < N ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(level, 0, level) ;  // Magenta
                   img.setRGB(i, j, c.getRGB()) ;
               }
           }
@@ -75,8 +91,8 @@
           if (me == 0) {
             begin = 0 ;
             end = N/2 ;
-            for(int i = 0 ; i < N ; i++) {
-                for(int j = begin ; j < end ; j++) {
+            for(int i = begin ; i < end ; i++) {
+                for(int j = 0 ; j < N ; j++) {
 
                     double cr = (4.0 * i - 2 * N) / N ;
                     double ci = (4.0 * j - 2 * N) / N ;
@@ -104,8 +120,8 @@
           else {  // me == 1
             begin = N/2 ;
             end = N ;              
-            for(int i = 0 ; i < N ; i++) {
-                for(int j = begin ; j < end ; j++) {
+            for(int i = begin ; i < end ; i++) {
+                for(int j = 0 ; j < N ; j++) {
 
                     double cr = (4.0 * i - 2 * N) / N ;
                     double ci = (4.0 * j - 2 * N) / N ;

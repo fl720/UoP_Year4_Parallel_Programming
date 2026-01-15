@@ -45,8 +45,8 @@
   
           // Draw pixels
   
-          for (int i = 0 ; i < N ; i++) {
-              for (int j = 0 ; j < N ; j++) {
+          for (int i = 0 ; i < N/2 ; i++) {
+              for (int j = 0 ; j < N/2 ; j++) {
   
                   int k = set [i] [j] ;
   
@@ -58,6 +58,54 @@
                       level = 0 ;
                   }
                   Color c = new Color(level/2, 0, level/2) ;  // Purple
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = N/2 ; i < N ; i++) {
+              for (int j = 0 ; j < N ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(level, level, 0) ;  // YELLOW
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = 0 ; i < N/2 ; i++) {
+              for (int j = N/2 ; j < N ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(level/2, 0, 0) ;  // Dark - Red
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = N/2 ; i < N ; i++) {
+              for (int j = N/2 ; j < N ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(0, level/2, level/2) ;  // dark-cyan
                   img.setRGB(i, j, c.getRGB()) ;
               }
           }

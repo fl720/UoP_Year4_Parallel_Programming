@@ -46,7 +46,23 @@
           // Draw pixels
   
           for (int i = 0 ; i < N ; i++) {
-              for (int j = 0 ; j < N ; j++) {
+              for (int j = 0 ; j < N/4 ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(level, 0, 0) ;  // red
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = 0 ; i < N ; i++) {
+              for (int j = N/4 ; j < N/2 ; j++) {
   
                   int k = set [i] [j] ;
   
@@ -58,6 +74,38 @@
                       level = 0 ;
                   }
                   Color c = new Color(level, level, 0) ;  // yellow
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = 0 ; i < N ; i++) {
+              for (int j = N/2 ; j < N/4*3 ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(0, level, 0) ;  // green
+                  img.setRGB(i, j, c.getRGB()) ;
+              }
+          }
+          for (int i = 0 ; i < N ; i++) {
+              for (int j = N/4*3 ; j < N ; j++) {
+  
+                  int k = set [i] [j] ;
+  
+                  float level ;
+                  if(k < CUTOFF) {
+                      level = (float) k / CUTOFF ;
+                  }
+                  else {
+                      level = 0 ;
+                  }
+                  Color c = new Color(0, 0, level) ;  // blue
                   img.setRGB(i, j, c.getRGB()) ;
               }
           }

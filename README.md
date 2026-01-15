@@ -33,6 +33,6 @@ The **sequential** folder contains code for calculating problem in normal mathem
 The **Aparapi** folder contains code for solving problem using aparapi api with GPU.
 
 In order to run aparapi part of the code. You need to have the following files: 
-**aparapi-2.0.0.jar**
-**aparapi-jni-1.4.3.jar**
-**bcel-6.5.0.jar** 
+- **aparapi-2.0.0.jar**
+- **aparapi-jni-1.4.3.jar**
+- **bcel-6.5.0.jar** 

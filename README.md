@@ -31,3 +31,8 @@ AparapiAPI is also used to discover ability of GPU in parallel programming.
 
 The **sequential** folder contains code for calculating problem in normal mathematical approch. This act as the benchmark for our experiment. 
 The **Aparapi** folder contains code for solving problem using aparapi api with GPU.
+
+In order to run aparapi part of the code. You need to have the following files: 
+**aparapi-2.0.0.jar**
+**aparapi-jni-1.4.3.jar**
+**bcel-6.5.0.jar** 
